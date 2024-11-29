@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{{block.super}}
+<div class="d-flex flex-wrap justify-content-center gap-3">
+    {% for i in meals %}
+    <div class="card" style="width: 18rem;">
+      <img src="{{i.strMealThumb}}" class="card-img-top" alt="{{i.strMeal}}">
+      <div class="card-body">
+        <h5 class="card-title">{{i.strMeal}}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+<h1>This is App Home Page</h1>
+{% endblock %}
