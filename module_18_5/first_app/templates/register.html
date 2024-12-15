@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %} 
+    {% if messages %}
+      {% for m in messages %}
+        <small {% if m.tags %} class="{{m.tags}}" {% endif %}>{{m}}</small>
+      {% endfor %}
+    {% endif %}
+    <form method="post" style="width: 50%; margin: auto" novalidate>
+    <h1>{{type}} page</h1>
+    {% csrf_token %}
+    {{form | crispy}}
+      <br />
+      <button class="btn btn-primary" type="submit">Submit</button>
+      <br/>
+    </form>
+{% endblock %}
