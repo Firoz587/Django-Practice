@@ -45,3 +45,4 @@ def album_delete(request, pk):
     album = get_object_or_404(Album, pk=pk)
     album.delete()
     return redirect('musician_list')
+
